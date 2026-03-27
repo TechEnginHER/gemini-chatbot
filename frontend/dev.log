@@ -1,0 +1,83 @@
+
+> frontend@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.1 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.2:3000
+✓ Ready in 561ms
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /app/package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles:
+   * /app/frontend/package-lock.json
+
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+
+○ Compiling / ...
+ GET / 200 in 8.0s (next.js: 7.4s, application-code: 603ms)
+API Error: Error [ApiError]: {"error":{"message":"{\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"models/gemini-3-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n","code":404,"status":"Not Found"}}
+    at ignore-listed frames {
+  status: 404
+}
+ POST /api/chat 500 in 2.3s (next.js: 1855ms, application-code: 472ms)
+[browser] Error: Failed to get response
+    at handleSubmit (src/app/page.tsx:112:15)
+  110 |
+  111 |       if (!response.ok) {
+> 112 |         throw new Error("Failed to get response");
+      |               ^
+  113 |       }
+  114 |
+  115 |       const reader = response.body?.getReader(); (src/app/page.tsx:153:15)
+ GET / 200 in 67ms (next.js: 5ms, application-code: 62ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <LoadingBoundary name="/" loading={null}>
+      <HTTPAccessFallbackBoundary notFound={{...}} forbidden={undefined} unauthorized={undefined}>
+        <HTTPAccessFallbackErrorBoundary pathname="/" notFound={{...}} forbidden={undefined} unauthorized={undefined} ...>
+          <RedirectBoundary>
+            <RedirectErrorBoundary router={{...}}>
+              <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} segmentPath={[...]} ...>
+                <SegmentViewNode type="page" pagePath="page.tsx">
+                  <SegmentTrieNode>
+                  <ClientPageRoot Component={function ChatInterface} serverProvidedParams={{...}}>
+                    <ChatInterface params={Promise} searchParams={Promise}>
+                      <div className="flex flex-..." onDragOver={function handleDragOver} ...>
+                        <AnimatePresence>
+                        <div>
+                        <div className="p-4 sm:p-6...">
+                          <form onSubmit={function handleSubmit} className="max-w-3xl ...">
+                            <div className="w-full fle...">
+                              <input>
+                              <button>
+                              <input
+                                type="text"
+                                value=""
+                                onChange={function onChange}
+                                placeholder="Type a message or drop an image..."
+                                className="flex-1 bg-transparent px-4 py-3 outline-none font-sans text-[#301934] place..."
+                                disabled={false}
+-                               style={{caret-color:"transparent"}}
+                              >
+                              ...
+                ...
+              ...
+
+ POST /api/chat 200 in 3.4s (next.js: 97ms, application-code: 3.3s)
